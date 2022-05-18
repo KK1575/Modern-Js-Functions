@@ -1,0 +1,169 @@
+<html>
+<head>
+<title>
+Reverse Number Check
+</title>
+<style>
+div{
+background-color:lightgrey;
+width:1350px;
+border:10px solid black;
+padding:50px;
+margin:20px;
+border-style:ridge;
+
+}
+</style>
+<script>
+function kk() 
+{
+if(document.getElementById("number").value=="")
+{
+document.getElementById("1").value="Please Enter Number";
+}
+else if(!document.getElementById("number").value.match(/^[0-9]*$/)){
+document.getElementById("1").value="Please Enter Valid Input";
+}
+else if(document.getElementById("f2").checked == true) {
+function rev()
+{
+var number;
+number=document.getElementById("number").value;
+let sum=number.split("").reverse().join("");
+document.getElementById("1").value=`The Reverse No. is ${sum}`;
+}
+rev();
+}
+else if (document.getElementById("f3").checked == true) {
+function rev(number)
+{
+let sum=number.split("").reverse().join("");
+document.getElementById("1").value=`The Reverse No. is ${sum}`;
+}
+rev(document.getElementById("number").value);
+}
+else if (document.getElementById("f4").checked == true) {
+function rev(number)
+{
+let sum=number.split("").reverse().join("");
+return document.getElementById("1").value=`The Reverse No. is ${sum}`;
+}
+rev(document.getElementById("number").value);
+}
+else if (document.getElementById("f5").checked == true) {
+function rev()
+{
+var number;
+number=document.getElementById("number").value;
+let sum=number.split("").reverse().join("");
+return document.getElementById("1").value=`The Reverse No. is ${sum}`;
+}
+rev();                
+}
+else if (document.getElementById("f6").checked == true) {
+function rev()
+{
+var number;
+number=document.getElementById("number").value;
+let sum=number.split("").reverse().join("");
+document.getElementById("1").value=`The Reverse No. is ${sum}`;
+}
+rev();
+}
+else if (document.getElementById("f7").checked == true) {
+function rev()
+{
+function getValue()
+{
+var number;
+number=document.getElementById("number").value;
+let sum=number.split("").reverse().join("");
+document.getElementById("1").value=`The Reverse No. is ${sum}`;
+}
+function rev1(callback){
+callback();
+}
+rev1(getValue);
+}
+rev();
+}
+else if (document.getElementById("f8").checked == true) {
+let rev=()=>
+{
+var number;
+number=document.getElementById("number").value;
+let sum=number.split("").reverse().join("");
+document.getElementById("1").value=`The Reverse No. is ${sum}`;
+}
+rev();
+}
+else if (document.getElementById("f9").checked == true) {
+function rev() {
+var promise = new Promise(function (resolve, reject) {
+var number;
+number=document.getElementById("number").value;
+let sum=number.split("").reverse().join("");
+if (sum == 0) 
+reject();
+else 
+resolve(sum); 
+});   
+promise.then(function (sum)
+{ document.getElementById("1").value = `The Reverse No. is ${sum}`; })
+.catch(function () { document.getElementById("1").value = "Error"; });
+}
+rev();
+}
+}
+</script>
+</head>
+<body>
+<div >
+<form>
+<h1 style="background-color:yellow;"><center>Check Reverse Value</center></h1>
+<center><table border=1 style="font-size:38px;border:5px solid black;">
+<tr>
+<th style="background-color:red;"><b>Enter Any value</b></th>
+<th><input type=text name="number" id="number" style="width:300px;"></th>
+</tr>
+<tr>
+<td><b>No arg No Return Value</b></td>
+<td><input type=radio name="k" id="f2"</td>
+</tr>
+<tr>
+<td><b>With arg No Return Value</b></td>
+<td><input type=radio name="k" id="f3"</td>
+</tr>
+<tr>
+<td><b>With arg With Return Value</b></td>
+<td><input type=radio name="k" id="f4"</td>
+</tr>
+<tr>
+<td><b>No arg With Return Value</b></td>
+<td><input type=radio name="k" id="f5"</td>
+</tr>
+<tr>
+<td><b>Function Expression</b></td>
+<td><input type=radio name="k" id="f6"</td>
+</tr>
+<tr>
+<td><b>CallBack Function</b></td>
+<td><input type=radio name="k" id="f7"</td>
+</tr>
+<tr>
+<td><b>Arrow Function</b></td>
+<td><input type=radio name="k" id="f8"</td>
+</tr>
+<tr>
+<td><b>Promise Function</b></td>
+<td><input type=radio name="k" id="f9"</td>
+</tr>
+<tr>
+<th><input type="button" value="Check" onclick="kk()" style="width:100px; height:35px; background-color:lightwhite; font-weight:bold;box-shadow:2px 2px;width:150px;font-size:20px;"></th>
+<td><input type=text id="1" style="width:300px;"></td>
+</tr>
+</table></center>
+</form>
+</div>
+</body>
+</html>
